@@ -21,6 +21,7 @@
   "homepage": "https://github.com/whoisdominic/spark6#readme",
   "dependencies": {
     "axios": "^0.20.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   }
 }
