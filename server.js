@@ -4,23 +4,23 @@ const cors = require("cors");
 const PORT = process.env.PORT || 8000;
 const Axios = require("axios");
 
-// const whitelist = ["http://127.0.0.1:5500"];
+const whitelist = ["http://127.0.0.1:5500"];
 
-// const corsOptions = (req, callback) => {
-//   let corsOptions;
-//   if (whitelist.indexOf(req.header("Origin")) !== -1) {
-//     corsOptions = { origin: true }; // reflect (enable) the requested origin in the CORS response
-//   } else {
-//     corsOptions = { origin: false }; // disable CORS for this request
-//   }
-//   callback(null, corsOptions); // callback expects two parameters: error and options
-// };
+const corsOptions = (req, callback) => {
+  let corsOptions;
+  if (whitelist.indexOf(req.header("Origin")) !== -1) {
+    corsOptions = { origin: true }; // reflect (enable) the requested origin in the CORS response
+  } else {
+    corsOptions = { origin: false }; // disable CORS for this request
+  }
+  callback(null, corsOptions); // callback expects two parameters: error and options
+};
 
 //////////////////////////
 // Middleware
 //////////////////////////
 
-// app.use(cors(corsOptions)); // cors middlewear, configured by
+app.use(cors(corsOptions)); // cors middlewear, configured by cors options
 app.use(express.json());
 app.use(express.static("build"));
 
