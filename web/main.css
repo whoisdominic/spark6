@@ -6,6 +6,7 @@ html {
 }
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -14,6 +15,19 @@ header {
   justify-content: center;
   align-items: center;
 }
-h1 {
-  font-size: 5rem;
+.postCont {
+  display: flex;
+  justify-content: baseline;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  margin: 5%;
+}
+.postComments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+article {
+  background-color: #212121;
 }

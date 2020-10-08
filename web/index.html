@@ -15,10 +15,39 @@
       <footer></footer>
     </div>
     <script>
-      var xhttp = new XMLHttpRequest();
-      xhttp.open("GET", "https://spark6.herokuapp.com/getPosts", true);
-      xhttp.send();
-      //   document.getElementById("main").appendChild();
+      function appendPosts(data) {
+        for (let post of data) {
+          var element = document.createElement("article");
+          element.setAttribute("id", post.id);
+          document.getElementById("main").appendChild(element);
+          document.getElementById(
+            `${post.id}`
+          ).innerHTML = `  <header classname="postCont">
+                  <h1>${post.title}</h1>
+                  <p>${post.body}</p>
+              </header>
+              <footer id=${`footer${post.id}`}>
+              </footer>`;
+          for (const comment of post.comments) {
+            var commentItem = document.getElementById(`footer${post.id}`);
+            commentItem.innerHTML = ` <article classname="postComments" id=${comment.id}>
+                     <h2>${comment.name}</h2>
+                     <h3>${comment.email}</h3>
+                     <p>${comment.body}>
+                  </article>`;
+            console.log(comment);
+          }
+        }
+      }
+
+      var requestOptions = {
+        method: "GET",
+      };
+
+      fetch("https://spark6.herokuapp.com/getPosts", requestOptions)
+        .then((response) => response.json())
+        .then((result) => appendPosts(result))
+        .catch((error) => console.log("error", error));
     </script>
   </body>
 </html>
