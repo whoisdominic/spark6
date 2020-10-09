@@ -38,6 +38,11 @@
                 }
           }
         }
+        function appendError(error) {
+          var element = document.createElement("h1")
+          element.innerText = error
+          document.getElementById("main").appendChild(element);
+        }
 
         var requestOptions = {
           method: "GET",
@@ -46,7 +51,7 @@
         fetch("https://spark6.herokuapp.com/getPosts", requestOptions)
           .then((response) => response.json())
           .then((result) => appendPosts(result))
-          .catch((error) => console.log("error", error));
+          .catch((error) => appendError(error));
 
     </script>
   </body>
