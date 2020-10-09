@@ -17,17 +17,43 @@ header {
 }
 .postCont {
   display: flex;
-  justify-content: baseline;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   border-radius: 15px;
-  margin: 5%;
+  margin: 2.5%;
 }
 .postComments {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-article {
+.post {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  margin: 5%;
   background-color: #212121;
+  text-align: center;
+}
+.comment {
+  text-align: center;
+  margin: 2%;
+  background-color: aliceblue;
+  border-radius: 15px;
+}
+.postTitle {
+  color: aliceblue;
+  text-decoration: underline;
+  font-size: 2rem;
+}
+.postBody {
+  color: rgb(255, 166, 0);
+  font-size: 1.5rem;
+}
+.maintitle {
+  font-size: 3rem;
+  margin-bottom: -7%;
 }
