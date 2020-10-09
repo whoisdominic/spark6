@@ -57,3 +57,12 @@ header {
   font-size: 3rem;
   margin-bottom: -7%;
 }
+.error {
+  text-align: center;
+  margin: 30%;
+  color: azure;
+  background-color: rgb(218, 23, 16);
+  width: 50%;
+  padding: 5%;
+  border-radius: 15px;
+}
